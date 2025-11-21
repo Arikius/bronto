@@ -41,11 +41,12 @@ RAPTOR stands for Recursive Autonomous Penetration Testing and Observation Robot
 
 It autonomously:
 
-1. **Scans** your code with Semgrep and CodeQL
-2. **Analyses** vulnerabilities using advanced LLM reasoning
-3. **Generates** working exploit proof-of-concepts
-4. **Creates** secure patches to fix vulnerabilities
-5. **Reports** everything in structured formats
+1. **Scans** your code with Semgrep and CodeQL and tries dataflow validation
+2. **Fuzzes** your binaries with American Fuzzy Lop (AFL)
+3. **Analyses** vulnerabilities using advanced LLM reasoning
+4. **Generates** working exploit proof-of-concepts
+5. **Creates** secure patches to fix vulnerabilities
+6. **Reports** everything in structured formats
 
 Unlike traditional tools that just flag issues, RAPTOR deeply understands your code, proves exploitability, and proposes fixes.
 
