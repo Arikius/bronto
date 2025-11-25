@@ -65,6 +65,7 @@ and extensible.
 ## What's unique about RAPTOR?
 Beyond RAPTOR's potential for autonomous security research and community collaboration, it demonstrates how Claude Code can be adapted for any purpose**, with RAPTOR packages.
 
+You can also use RAPTOR on most other coding agents by changing claude.md to the native rules file, from Copilot and Codex, to the VS Code-based ones such as Cursor, Windsurf, Devin, and Cline.
 ---
 
 ## Quick Start
