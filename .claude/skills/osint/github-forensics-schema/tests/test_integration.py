@@ -224,25 +224,49 @@ class TestIOCIntegration:
         assert ioc.value == "efee962ff1d1a80cfd6e498104cf72f348955693"
         assert ioc.verification.source == EvidenceSource.SECURITY_VENDOR
 
-    def test_ioc_rejects_value_not_in_source(self, factory):
-        """IOC creation should fail if value is not found in the source."""
-        # Should raise ValueError for either:
-        # - "not found in source" (when page loads but value not found)
-        # - "Failed to fetch source URL" (when page is unavailable)
-        with pytest.raises(ValueError, match="(not found in source|Failed to fetch)"):
+    def test_ioc_rejects_value_not_in_source(self, factory, monkeypatch):
+        """IOC creation should fail if value is not found in the source.
+
+        Uses monkeypatch to mock the HTTP response, ensuring deterministic behavior.
+        """
+        import requests
+
+        class MockResponse:
+            status_code = 200
+            text = "This page contains sha: abc123 but not the value we're looking for"
+
+            def raise_for_status(self):
+                pass
+
+        def mock_get(*args, **kwargs):
+            return MockResponse()
+
+        monkeypatch.setattr(requests, "get", mock_get)
+
+        with pytest.raises(ValueError, match="not found in source"):
             factory.ioc(
                 ioc_type=IOCType.COMMIT_SHA,
-                value="this_sha_is_not_in_the_article",
-                source_url="https://mbgsec.com/posts/2025-07-24-constructing-a-timeline-for-amazon-q-prompt-infection/",
+                value="this_sha_is_not_in_the_page",
+                source_url="https://example.com/article",
             )
 
-    def test_ioc_fails_on_invalid_url(self, factory):
-        """IOC creation should fail gracefully on unreachable URLs."""
-        with pytest.raises(Exception):  # Could be ConnectionError, HTTPError, etc.
+    def test_ioc_fails_on_invalid_url(self, factory, monkeypatch):
+        """IOC creation should fail gracefully on unreachable URLs.
+
+        Uses monkeypatch to simulate connection error, ensuring deterministic behavior.
+        """
+        import requests
+
+        def mock_get(*args, **kwargs):
+            raise requests.exceptions.ConnectionError("Simulated connection failure")
+
+        monkeypatch.setattr(requests, "get", mock_get)
+
+        with pytest.raises(ValueError, match="Failed to fetch"):
             factory.ioc(
                 ioc_type=IOCType.COMMIT_SHA,
                 value="anything",
-                source_url="https://this-domain-does-not-exist-12345.com/article",
+                source_url="https://unreachable.example.com/article",
             )
 
 
