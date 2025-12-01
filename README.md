@@ -57,12 +57,14 @@ RAPTOR combines traditional security tools with agentic automation and analysis
 understands your code, proves exploitability, and proposes patches.
 
 **Disclaimer: It's a quick hack, and we can't live without it**:
-No matter the result we got to (and some of our tools are beyond useful), RAPTOR itself was
-hacked together in free time, held together by vibe coding and duct tape. We encourage community
-contributions. it's open source, modular, and extensible.
+We're proud of RAPTOR (and some of our tools are beyond useful), but RAPTOR itself was hacked
+together in free time, held together by vibe coding and duct tape. Consider it an early release.
 
-**Be warned**: RAPTOR will automatically install tools without asking, check dependencies.txt
-first, and install dependencies. Or, contribute a Docker image so it's easier for others.
+What will make RAPTOR truly transformative is community contributions. It's open source,
+modular, and extensible.
+
+**Be warned**: Unless you use the devcontainer, RAPTOR will automatically install tools
+without asking, check dependencies.txt first, and install dependencies.
 
 ---
 
