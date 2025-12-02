@@ -1,12 +1,12 @@
 ```text
 ╔═══════════════════════════════════════════════════════════════════════════╗ 
 ║                                                                           ║
-║             ██████╗  █████╗ ██████╗ ████████╗ ██████╗ ██████╗             ║ 
-║             ██╔══██╗██╔══██╗██╔══██╗╚══██╔══╝██╔═══██╗██╔══██╗            ║ 
-║             ██████╔╝███████║██████╔╝   ██║   ██║   ██║██████╔╝            ║ 
-║             ██╔══██╗██╔══██║██╔═══╝    ██║   ██║   ██║██╔══██╗            ║ 
-║             ██║  ██║██║  ██║██║        ██║   ╚██████╔╝██║  ██║            ║ 
-║             ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝        ╚═╝    ╚═════╝ ╚═╝  ╚═╝            ║ 
+║            ██████╗ ██████╗  ██████╗ ███╗   ██╗████████╗ ██████╗           ║ 
+║            ██╔══██╗██╔══██╗██╔═══██╗████╗  ██║╚══██╔══╝██╔═══██╗          ║ 
+║            ██████╔╝██████╔╝██║   ██║██╔██╗ ██║   ██║   ██║   ██║          ║ 
+║            ██╔══██╗██╔══██╗██║   ██║██║╚██╗██║   ██║   ██║   ██║          ║ 
+║            ██████╔╝██║  ██║╚██████╔╝██║ ╚████║   ██║   ╚██████╔╝          ║ 
+║            ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚═╝  ╚═══╝   ╚═╝    ╚═════╝           ║ 
 ║                                                                           ║ 
 ║             Autonomous Offensive/Defensive Research Framework             ║
 ║             Based on Claude Code - v1.0-alpha                             ║
@@ -19,31 +19,31 @@
                              / _)                                             
                       .-^^^-/ /                                               
                    __/       /                                                
-                  <__.|_|-|_|                                                 
+                  <__.|_|-|_|                                          
 ```
 
-# RAPTOR - Autonomous Offensive/Defensive Security Research Framework, based on Claude Code
+# Bronto - Autonomous Offensive/Defensive Security Research Framework, based on Claude Code
 
 **Authors:** Gadi Evron, Daniel Cuthbert, Thomas Dullien (Halvar Flake), and Michael Bargury
 (@gadievron, @danielcuthbert, @thomasdullien, @mbrg)
 
 **License:** MIT (see LICENSE file)
 
-**Repository:** https://github.com/gadievron/raptor
+**Repository:** https://github.com/gadievron/Bronto
 
 **Dependencies:** See DEPENDENCIES.md for external tools and licenses
 
 ---
 
-## What is RAPTOR?
+## What is Bronto?
 
-RAPTOR is an **autonomous offensive/defensive security research framework**, based on
+Bronto is an **autonomous offensive/defensive security research framework**, based on
 **Claude Code**. It empowers security research with agentic workflows and automation.
 
-RAPTOR stands for Recursive Autonomous Penetration Testing and Observation Robot.
-(We really wanted to name it RAPTOR)
+Bronto stands for Recursive Autonomous Penetration Testing and Observation Robot.
+(We really wanted to name it Bronto)
 
-**RAPTOR autonomously**:
+**Bronto autonomously**:
 1. **Scans** your code with Semgrep and CodeQL and tries dataflow validation
 2. **Fuzzes** your binaries with American Fuzzy Lop (AFL)
 3. **Analyses** vulnerabilities using advanced LLM reasoning
@@ -53,25 +53,25 @@ RAPTOR stands for Recursive Autonomous Penetration Testing and Observation Robot
    (https://news.ycombinator.com/item?id=45891016)
 8. **Reports** everything in structured formats
 
-RAPTOR combines traditional security tools with agentic automation and analysis, deeply
+Bronto combines traditional security tools with agentic automation and analysis, deeply
 understands your code, proves exploitability, and proposes patches.
 
 **Disclaimer: It's a quick hack, and we can't live without it**:
-We're proud of RAPTOR (and some of our tools are beyond useful), but RAPTOR itself was hacked
+We're proud of Bronto (and some of our tools are beyond useful), but Bronto itself was hacked
 together in free time, held together by vibe coding and duct tape. Consider it an early release.
 
-What will make RAPTOR truly transformative is community contributions. It's open source,
+What will make Bronto truly transformative is community contributions. It's open source,
 modular, and extensible.
 
-**Be warned**: Unless you use the devcontainer, RAPTOR will automatically install tools
+**Be warned**: Unless you use the devcontainer, Bronto will automatically install tools
 without asking, check dependencies.txt first.
 
 ---
 
-## What's unique about RAPTOR?
+## What's unique about Bronto?
 
-Beyond RAPTOR's potential for autonomous security research and community collaboration, it
-demonstrates how Claude Code can be adapted for any purpose**, with RAPTOR packages.
+Beyond Bronto's potential for autonomous security research and community collaboration, it
+demonstrates how Claude Code can be adapted for any purpose**, with Bronto packages.
 
 ---
 
@@ -84,9 +84,9 @@ You have two options, install on your own, or deploy the devcontainer.
 # 1. Install Claude Code
 # Download from: https://claude.ai/download
 
-# 2. Clone and open RAPTOR
-git clone https://github.com/gadievron/raptor.git
-cd raptor
+# 2. Clone and open Bronto
+git clone https://github.com/gadievron/Bronto.git
+cd Bronto
 claude
 
 # 3. Let Claude install dependencies
@@ -98,7 +98,7 @@ claude
 # 4. Get the devcontainer
 A devcontainer with all prerequisites pre-installed is available. Open in VS Code or any of
 its forks with command Dev Container: Open Folder in Container, or build with docker:
-docker build -f .devcontainer/Dockerfile -t raptor-devcontainer:latest ..
+docker build -f .devcontainer/Dockerfile -t Bronto-devcontainer:latest ..
 
 Runs with --privileged flag for rr.
 
@@ -106,7 +106,7 @@ Runs with --privileged flag for rr.
 The devcontainer is massive (~6GB), starting with Microsoft Python 3.12 massive devcontainer and
 adding static analysis, fuzzing and browser automation tools.
 
-# 6. Getting started with RAPTOR
+# 6. Getting started with Bronto
 Just say "hi" to get started
 Try /analyze on one of our tests in /tests/data
 ```
@@ -137,7 +137,7 @@ Playwright browser automation (Chromium, Firefox, Webkit browsers)
 Runtime notes:
 ```
 Runs with --privileged flag required for rr debugger
-PYTHONPATH configured for /workspaces/raptor imports
+PYTHONPATH configured for /workspaces/Bronto imports
 All Playwright browsers pre-downloaded
 ```
 ### Usage
@@ -147,7 +147,7 @@ Open in VS Code or any of its forks with Dev Container: Open Folder in Container
 Or build it with docker:
 
 ```
-docker build -f .devcontainer/Dockerfile -t raptor-devcontainer:latest .
+docker build -f .devcontainer/Dockerfile -t Bronto-devcontainer:latest .
 ```
 
 
@@ -157,7 +157,7 @@ docker build -f .devcontainer/Dockerfile -t raptor-devcontainer:latest .
 
 **Main entry point:**
 ```
-/raptor   - RAPTOR security testing assistant (start here for guidance)
+/Bronto   - Bronto security testing assistant (start here for guidance)
 ```
 
 **Security testing:**
@@ -207,7 +207,7 @@ Usage: "Use [persona name]"
 - Alpha (custom skills) → User-created
 
 **Python Execution Layer:**
-- raptor.py → Unified launcher
+- Bronto.py → Unified launcher
 - packages/ → 9 security capabilities
 - core/ → Shared utilities
 - engine/ → Rules and queries
@@ -245,9 +245,9 @@ models work for analysis but may produce non-compilable exploit code.
 For scripting or CI/CD integration:
 
 ```bash
-python3 raptor.py agentic --repo /path/to/code
-python3 raptor.py scan --repo /path/to/code --policy_groups secrets
-python3 raptor.py fuzz --binary /path/to/binary --duration 3600
+python3 Bronto.py agentic --repo /path/to/code
+python3 Bronto.py scan --repo /path/to/code --policy_groups secrets
+python3 Bronto.py fuzz --binary /path/to/binary --duration 3600
 ```
 
 **See:** `docs/PYTHON_CLI.md` for complete Python CLI reference
@@ -269,7 +269,7 @@ python3 raptor.py fuzz --binary /path/to/binary --duration 3600
 
 ## Contribute
 
-RAPTOR is in alpha, and we welcome contributions from anyone, on anything.
+Bronto is in alpha, and we welcome contributions from anyone, on anything.
 - Your idea here
 - Your second idea here
 
@@ -280,7 +280,7 @@ Windsurf, Copilot, or Codex? Devin? Cline? Antigravity?
 
 Hacker poetry? :)
 
-Chat with us on the #raptor channel at the Prompt||GTFO Slack:
+Chat with us on the #Bronto channel at the Prompt||GTFO Slack:
 https://join.slack.com/t/promptgtfo/shared_invite/zt-3alf92eqe-BpVLxPbWTI50Tbl11Hl46Q
 
 **See:** `docs/EXTENDING_LAUNCHER.md` for developer guide
@@ -297,9 +297,9 @@ See LICENSE file for full text.
 
 ## Support
 
-**Issues:** https://github.com/gadievron/raptor/issues
-**Repository:** https://github.com/gadievron/raptor
+**Issues:** https://github.com/gadievron/Bronto/issues
+**Repository:** https://github.com/gadievron/Bronto
 **Documentation:** See `docs/` directory
 
-Chat with us on the #raptor channel at the Prompt||GTFO Slack:
+Chat with us on the #Bronto channel at the Prompt||GTFO Slack:
 https://join.slack.com/t/promptgtfo/shared_invite/zt-3alf92eqe-BpVLxPbWTI50Tbl11Hl46Q
